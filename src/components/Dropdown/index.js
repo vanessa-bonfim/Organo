@@ -1,13 +1,12 @@
 import "./Dropdown.css";
 
-const Dropdown = (props) => {
+const Dropdown = ({label, items, value, whenChanged, required =  false }) => {
 
-    return (
-        <div className="dropdown">
-            <label>{props.label}</label>
-            <select onChange={event => props.whenChanged(event.target.value)} required={props.required} value={props.value}>
-                <option value=""></option>
-                {props.items.map(item => <option key={item}>{item}</option>)}
+    return (<div className="dropdown">
+            <label>{label}</label>
+            <select onChange={event => whenChanged(event.target.value)} required={required} value={value}>
+                <option></option>
+                {items.map(item => <option key={item}>{item}</option>)}
             </select>
         </div>
     )

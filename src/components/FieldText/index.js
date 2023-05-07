@@ -1,25 +1,11 @@
 import "./FieldText.css";
 
-const FieldText = (props) => {
-
-    const modifyPlaceholder = `${props.placeholder}...`
-
-    /* let value = "Vanessa B" */
-
-    /* const [value, setValue] = useState('Vanessa B') */
-
-    const whenTyped = (event) => {
-
-        /* setValue(event.target.value); */
-        /* console.log(value); */
-
-        props.whenChanged(event.target.value)
-    }
+const FieldText = ({label, placeholder, value, whenChanged, required = false}) => {
     
     return (
         <div className="field-text">
-            <label>{props.label}</label>
-            <input value={props.value} onChange={whenTyped} required={props.required} placeholder={modifyPlaceholder}/>
+            <label>{label}</label>
+            <input value={value} onChange={event => whenChanged(event.target.value)} required={required} placeholder={placeholder}/>
         </div>
     )
 }

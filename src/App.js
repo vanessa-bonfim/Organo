@@ -42,25 +42,165 @@ function App() {
       secondaryColor: '#FFEEDF'
     }
   ]
-
-  const [employees, setEmployees] = useState([]);
-
-  const whenNewEmployeeAdded = (employee) => {
-    console.log(employee);
-    setEmployees([...employees, employee])
-  }
-
+  const initial = [
+    {
+      name: 'JULIANA AMOASEI',
+      role: 'Desenvolvedora de software e instrutora',
+      image: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
+      team: teams[0].name
+    },
+    {
+      name: 'DANIEL ARTINE',
+      role: 'Engenheiro de Software na Stone Age',
+      image: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
+      team: teams[0].name
+    },
+    {
+      name: 'GUILHERME LIMA',
+      role: 'Desenvolvedor Python e JavaScript na Alura',
+      image: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
+      team: teams[0].name
+    },
+    {
+      name: 'PAULO SILVEIRA',
+      role: 'Hipster e CEO da Alura',
+      image: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
+      team: teams[0].name
+    },
+    {
+      name: 'JULIANA AMOASEI',
+      role: 'Desenvolvedora de software e instrutora',
+      image: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
+      team: teams[1].name
+    },
+    {
+      name: 'DANIEL ARTINE',
+      role: 'Engenheiro de Software na Stone Age',
+      image: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
+      team: teams[1].name
+    },
+    {
+      name: 'GUILHERME LIMA',
+      role: 'Desenvolvedor Python e JavaScript na Alura',
+      image: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
+      team: teams[1].name
+    },
+    {
+      name: 'PAULO SILVEIRA',
+      role: 'Hipster e CEO da Alura',
+      image: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
+      team: teams[1].name
+    },
+    {
+      name: 'JULIANA AMOASEI',
+      role: 'Desenvolvedora de software e instrutora',
+      image: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
+      team: teams[2].name
+    },
+    {
+      name: 'DANIEL ARTINE',
+      role: 'Engenheiro de Software na Stone Age',
+      image: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
+      team: teams[2].name
+    },
+    {
+      name: 'GUILHERME LIMA',
+      role: 'Desenvolvedor Python e JavaScript na Alura',
+      image: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
+      team: teams[2].name
+    },
+    {
+      name: 'PAULO SILVEIRA',
+      role: 'Hipster e CEO da Alura',
+      image: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
+      team: teams[2].name
+    },
+    {
+      name: 'JULIANA AMOASEI',
+      role: 'Desenvolvedora de software e instrutora',
+      image: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
+      team: teams[3].name
+    },
+    {
+      name: 'DANIEL ARTINE',
+      role: 'Engenheiro de Software na Stone Age',
+      image: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
+      team: teams[3].name
+    },
+    {
+      name: 'GUILHERME LIMA',
+      role: 'Desenvolvedor Python e JavaScript na Alura',
+      image: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
+      team: teams[3].name
+    },
+    {
+      name: 'PAULO SILVEIRA',
+      role: 'Hipster e CEO da Alura',
+      image: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
+      team: teams[3].name
+    },
+    {
+      name: 'JULIANA AMOASEI',
+      role: 'Desenvolvedora de software e instrutora',
+      image: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
+      team: teams[4].name
+    },
+    {
+      name: 'DANIEL ARTINE',
+      role: 'Engenheiro de Software na Stone Age',
+      image: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
+      team: teams[4].name
+    },
+    {
+      name: 'GUILHERME LIMA',
+      role: 'Desenvolvedor Python e JavaScript na Alura',
+      image: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
+      team: teams[4].name
+    },
+    {
+      name: 'PAULO SILVEIRA',
+      role: 'Hipster e CEO da Alura',
+      image: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
+      team: teams[4].name
+    },
+    {
+      name: 'JULIANA AMOASEI',
+      role: 'Desenvolvedora de software e instrutora',
+      image: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
+      team: teams[5].name
+    },
+    {
+      name: 'DANIEL ARTINE',
+      role: 'Engenheiro de Software na Stone Age',
+      image: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
+      team: teams[5].name
+    },
+    {
+      name: 'GUILHERME LIMA',
+      role: 'Desenvolvedor Python e JavaScript na Alura',
+      image: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
+      team: teams[5].name
+    },
+    {
+      name: 'PAULO SILVEIRA',
+      role: 'Hipster e CEO da Alura',
+      image: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
+      team: teams[5].name
+    },
+  ]
+  const [employees, setEmployees] = useState(initial);
   return (
-    <div className="App">
+    <div>
       <Banner />
-      <Form team={teams.map(team => team.name)} whenRegisteredEmployee={employee => whenNewEmployeeAdded(employee)}/>
-      {teams.map(team => <Team 
-      key={team.name} 
-      name={team.name} 
-      backgroundColor={team.secondaryColor} 
-      boxColor={team.primaryColor}
+      <Form teams={teams.map(team => team.name)} whenRegisteredEmployee={employee => setEmployees([...employees, employee])}/>
+      <section className='teams'>
+        <h1>Minha Organização</h1>
+        {teams.map((team, i) => <Team 
+      key={i} 
+      team={team}
       employees={employees.filter(employee => employee.team === team.name)}
       />)}
+      </section>
       <Footer />
     </div>
   );

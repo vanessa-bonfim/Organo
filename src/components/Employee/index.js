@@ -1,16 +1,16 @@
 import "./Employee.css"
 
-const Employee = ({name, role, image, boxColor}) => {
+const Employee = ({employee, boxColor}) => {
     console.log(boxColor);
 
     return (
         <div className="employee">
             <div className="employee__header" style={{backgroundColor: boxColor}}>
-                <img src={image} alt={name} />
+                <img src={employee.image} alt={employee.name} />
             </div>
             <div className="employee__footer">
-                <h4>{name}</h4>
-                <h5>{role}</h5>
+                <h4>{employee.name}</h4>
+                <h5>{employee.role}</h5>
             </div>
         </div>
     )
