@@ -1,4 +1,5 @@
 .employee {
+    position: relative;
     width: 280px;
 }
 
@@ -37,4 +38,10 @@
     color: #212121;
     padding: 0 16px;
     margin: 0;
+}
+
+.employee__delete {
+    position: absolute;
+    right: 8px;
+    top: 8px;
 }

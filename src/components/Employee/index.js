@@ -1,11 +1,17 @@
+import hexToRgba from 'hex-to-rgba';
+import { AiFillCloseCircle } from 'react-icons/ai';
 import "./Employee.css"
 
-const Employee = ({employee, boxColor}) => {
-    console.log(boxColor);
-
+const Employee = ({ employee, whenDelete, boxColor }) => {
     return (
         <div className="employee">
-            <div className="employee__header" style={{backgroundColor: boxColor}}>
+            <AiFillCloseCircle
+                className="employee__delete"
+                size={20}
+                fontWeight={500}
+                style={{ color: hexToRgba(boxColor, '0.6') }}
+                onClick={() => whenDelete(employee.id)} />
+            <div className="employee__header" style={{ backgroundColor: boxColor }}>
                 <img src={employee.image} alt={employee.name} />
             </div>
             <div className="employee__footer">
