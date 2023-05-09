@@ -45,3 +45,13 @@
     right: 8px;
     top: 8px;
 }
+.employee__delete:hover {
+    cursor: pointer;
+}
+.favorite {
+    margin-top: 20px;
+}
+
+.favorite:hover {
+    cursor: pointer;
+}
